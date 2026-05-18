@@ -434,9 +434,9 @@ fn test_eq_hash() {
         hasher.finish()
     }
 
-    assert!(req("^1") == req("^1"));
-    assert!(calculate_hash(req("^1")) == calculate_hash(req("^1")));
-    assert!(req("^1") != req("^2"));
+    assert_eq!(req("^1"), req("^1"));
+    assert_eq!(calculate_hash(req("^1")), calculate_hash(req("^1")));
+    assert_ne!(req("^1"), req("^2"));
 }
 
 #[test]
